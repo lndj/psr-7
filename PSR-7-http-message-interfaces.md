@@ -37,6 +37,7 @@ This is the response body
 “推荐”("RECOMMENDED")、“可以”("MAY")和”可选“("OPTIONAL")的详细描述可参见 [RFC 2119][] 。
 
 ### 参考
+
 - [RFC 2119][]
 - [RFC 3986][]
 - [RFC 7230][]
