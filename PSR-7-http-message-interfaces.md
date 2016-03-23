@@ -81,3 +81,28 @@ echo $message->getHeaderLine('foo');
 #### 带有多个值的报头
 
 为了能够容纳具有多个值且依然能够方便地以字符串形式传输的报头， `MessageInterface` 接口的实例能够以数组或字符串的形式来获取报头。使用 `getHeaderLine()` 方法来获取特定名称的报头的值，其形式为不区分大小写并用逗号连接的字符串，包含了所有的报头值。使用 `getHeader()` 来获取特定名称的所有报头值，其以数组形式返回结果，且不区分大小写。
+
+```php
+$message = $message
+    ->withHeader('foo', 'bar')
+    ->withAddedHeader('foo', 'baz');
+
+$header = $message->getHeaderLine('foo');
+// $header contains: 'bar, baz'
+
+$header = $message->getHeader('foo');
+// ['bar', 'baz']
+```
+注意：并非所有的报头值都可以用逗号连接起来（例如： `Set-Cookie` ）。当需要获取此类报头值时，基于 `MessageInterface` 的消费者类 **应该** 使用 `getHeader()` 方法来获取这类多值型报头。
+
+#### 主机头
+
+在请求中，主机头通常反映了URI的主机组成部分，以及建立TCP连接时使用的主机。然而HTTP规范允许以上两种主机头之间是不相同的。
+
+在构造头的过程中，如果没有提供主机头的情况下，实现者 **必须** 尝试从提供的URI设置主机头。
+
+默认情况下， `RequestInterface::withUri()` 方法将使用传递给 `UriInterface` 接口的与主机组件匹配的主机头来替换返回的请求中主机头。
+
+你也可以通关传递第二个参数值（ `$preserveHost` ）为 `true` 来保留原有的主机头状态。当这个参数设置为 `true` 时，返回的请求将不会更新返回的消息的主机头 - 除非该消息不包含主机头。
+
+下面的表格表明了将 `$preserveHost` 参数设置为 `true` 的情况下 `withUri()` 方法返回的请求中使用 `getHeaderLine('Host')` 方法在多个初始请求和URL中返回的结果。
