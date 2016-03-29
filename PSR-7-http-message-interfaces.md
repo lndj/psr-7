@@ -107,17 +107,6 @@ $header = $message->getHeader('foo');
 
 下面的表格表明了将 `$preserveHost` 参数设置为 `true` 的情况下 `withUri()` 方法返回的请求中使用 `getHeaderLine('Host')` 方法在多个初始请求和URL中返回的结果。
 
----
-请求头1: ''
-请求主机组件2: ''
-URI主机组件3: ''
-结果: ''
----
-
----
-title: This is a post.
-tags: php,js
-date: 2016-03-18 11:11:11
-update-date: 2016-03-18 11:11:11
-author: Luo Ning
----
+请求头1 | 请求主机组件2 | URI主机组件3 | 结果
+------- | ----------- | -----------  | ------
+''      | ''          | ''           | ''
