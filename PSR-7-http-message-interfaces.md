@@ -106,3 +106,10 @@ $header = $message->getHeader('foo');
 你也可以通关传递第二个参数值（ `$preserveHost` ）为 `true` 来保留原有的主机头状态。当这个参数设置为 `true` 时，返回的请求将不会更新返回的消息的主机头 - 除非该消息不包含主机头。
 
 下面的表格表明了将 `$preserveHost` 参数设置为 `true` 的情况下 `withUri()` 方法返回的请求中使用 `getHeaderLine('Host')` 方法在多个初始请求和URL中返回的结果。
+
+---
+请求头1: ''
+请求主机组件2: ''
+URI主机组件3: ''
+结果: ''
+---
