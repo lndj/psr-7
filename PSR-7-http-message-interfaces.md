@@ -113,3 +113,11 @@ $header = $message->getHeader('foo');
 URI主机组件3: ''
 结果: ''
 ---
+
+---
+title: This is a post.
+tags: php,js
+date: 2016-03-18 11:11:11
+update-date: 2016-03-18 11:11:11
+author: Luo Ning
+---
