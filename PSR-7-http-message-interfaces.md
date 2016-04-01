@@ -121,3 +121,4 @@ $header = $message->getHeader('foo');
 
 ### 1.3 流
 
+HTTP消息有一个启动线，头和消息主体组成。消息主题可以很小也能很大。
