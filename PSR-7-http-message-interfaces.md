@@ -115,3 +115,9 @@ $header = $message->getHeader('foo');
 |foo.com |  ''          | bar.com	  | foo.com   | 
 |foo.com |  foo.com     | baz.com     | foo.com   | 
 
+1. `Host` 头值始终在其余操作之前；
+2. URI的主机组件在操作请求之前组成；
+3. URI的主机组件通过 `withUri()` 来注入。
+
+### 1.3 流
+
