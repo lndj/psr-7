@@ -121,4 +121,4 @@ $header = $message->getHeader('foo');
 
 ### 1.3 流
 
-HTTP消息有一个启动线，头和消息主体组成。消息主题可以很小也能很大。如果试图以字符串的形式来表达消息体，将会很轻易就消耗比预期更多的内存，因为消息体式必须被全部存储在内存中的。
+HTTP消息有一个启动线，头和消息主体组成。消息主题可以很小也能很大。如果试图以字符串的形式来表达消息体，将会很轻易就消耗比预期更多的内存，因为消息体式必须被全部存储在内存中的。（ Attempting to store the body of a request or response in memory would preclude the use of that implementation from being able to work with large message bodies.）试图存储请求或者响应的消息体能够排除
