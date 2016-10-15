@@ -5,3 +5,8 @@
 
 1. PSR-7: HTTP message interfaces
 2. PSR-7: HTTP Message Meta Document
+
+中文版本：
+
+1. [PSR-7: HTTP消息接口](https://github.com/lndj/psr-7/blob/master/PSR-7-http-message-interfaces.md)
+2. PSR-7: HTTP消息元文件
